@@ -2,8 +2,14 @@ import { API_BASE, API_ENDPOINTS } from '../utils/api.js';
 
 const handleResponse = async (res, fallbackMessage) => {
   if (!res.ok) {
-    const message = await res.text();
-    throw new Error(message || fallbackMessage);
+    try {
+      const errorData = await res.json();
+      throw new Error(errorData.message || fallbackMessage);
+    } catch (parseErr) {
+      // If JSON parsing fails, use the raw text
+      const message = await res.text();
+      throw new Error(message || fallbackMessage);
+    }
   }
   return res.json();
 };

@@ -241,11 +241,13 @@ button:hover {
 button.primary {
   background: var(--accent);
   color: #f1f5f9;
+  margin: 8px;
 }
 
 button.ghost {
   border-color: var(--border);
   color: var(--text);
+  margin: 8px;
 }
 
 .mode-toggle {
@@ -423,8 +425,9 @@ button.ghost {
   gap: 6px;
   padding: 6px 10px;
   border-radius: 999px;
-  background: #1f2a44;
+  background: var(--card);
   border: 1px solid var(--border);
+  color: var(--text);
 }
 
 .tag.success {
@@ -598,7 +601,8 @@ tr.best {
   padding: 12px;
   border: 1px solid var(--border);
   border-radius: 10px;
-  background: #0c1427;
+  background: var(--card);
+  color: var(--text);
 }
 
 .history__metrics {
@@ -697,6 +701,7 @@ tr.best {
   top: 0;
   z-index: 100;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius);
 }
 
 .navbar-inner {
@@ -707,6 +712,7 @@ tr.best {
   justify-content: space-between;
   padding: 16px 24px;
   gap: 32px;
+  border-radius: var(--radius);
 }
 
 .navbar-brand {
